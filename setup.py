@@ -17,7 +17,7 @@ setup(
     author="Jisnu Kalita",
     author_email="ssh@tuklu.dev",
     url="https://github.com/tuklu/SonicScribe.git",
-    packages=find_packages(),
+    packages=find_packages(include=["SonicScribe", "SonicScribe.*"]),
     include_package_data=True,
     install_requires=[
         "openai>=1.0.0",
@@ -26,12 +26,13 @@ setup(
         "tenacity>=8.0.0",
         "rich>=13.0.0",
         "pydub>=0.25.1",
-        "typing-extensions>=4.0.0"
+        "typing-extensions>=4.0.0",
+        "questionary>=1.10.0"
     ],
     entry_points={
         "console_scripts": [
-            "sonicscribe=sonicscribe.main:main",
-            "translate-srt=sonicscribe.translate_srt:main",
+            "sonicscribe=SonicScribe.main:main",
+            "translate-srt=SonicScribe.translate_srt:main",
         ],
     },
     classifiers=[

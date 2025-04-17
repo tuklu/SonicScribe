@@ -4,3 +4,5 @@ __pycache__/
 SonicScribe/output/
 SonicScribe/logs/
 SS
+sonicscribe.egg-info
+build

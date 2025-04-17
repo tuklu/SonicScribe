@@ -7,12 +7,13 @@ import questionary
 from rich.progress import Progress, SpinnerColumn, TextColumn, TimeElapsedColumn
 from rich.console import Console
 
-from utils.audio_extractor import extract_audio
-from utils.whisper_api import transcribe_audio, transcribe_large_audio
-from utils.file_manager import save_transcript, save_srt_from_segments
-from utils.translator import translate_segments_to_english
-from utils.logger import setup_logger
-from utils.language_detector import detect_language
+from SonicScribe.utils.audio_extractor import extract_audio
+from SonicScribe.utils.whisper_api import transcribe_audio, transcribe_large_audio
+from SonicScribe.utils.file_manager import save_transcript, save_srt_from_segments
+from SonicScribe.utils.translator import translate_segments_to_english
+from SonicScribe.utils.logger import setup_logger
+from SonicScribe.utils.language_detector import detect_language
+from SonicScribe import __version__
 
 def parse_args():
     # Parse command line arguments with expanded options
@@ -25,6 +26,7 @@ def parse_args():
     parser.add_argument("--chunk-size", type=int, default=20, help="Chunk size in MB for large files")
     parser.add_argument("--verbose", "-v", action="store_true", help="Enable verbose logging")
     parser.add_argument("--bilingual", action="store_true", help="Create bilingual subtitles with original and translated text")
+    parser.add_argument("--version", action="version", version=f"SonicScribe {__version__}")  # Dynamically fetch version
     return parser.parse_args()
 
 def select_language(original_segments, console):

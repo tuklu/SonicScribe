@@ -5,7 +5,8 @@ import re
 import argparse
 from rich.progress import Progress, TextColumn, SpinnerColumn, TimeElapsedColumn
 from rich.console import Console
-from utils.language_detector import detect_language  # Import the language detector
+from SonicScribe.utils.language_detector import detect_language
+from SonicScribe.utils.file_manager import save_transcript, save_srt_from_segments
 
 # Load environment variables
 load_dotenv()
