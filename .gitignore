@@ -3,5 +3,4 @@ __pycache__/
 *.pyc
 SonicScribe/output/
 SonicScribe/logs/
-SonicScribe/.git_backup/
 SS
