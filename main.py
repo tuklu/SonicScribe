@@ -6,11 +6,11 @@ import os
 from rich.progress import Progress, SpinnerColumn, TextColumn, TimeElapsedColumn
 from rich.console import Console
 
-from SonicScribe.utils.audio_extractor import extract_audio
-from SonicScribe.utils.whisper_api import transcribe_audio, transcribe_large_audio
-from SonicScribe.utils.file_manager import save_transcript, save_srt_from_segments
-from SonicScribe.utils.translator import translate_segments_to_english
-from SonicScribe.utils.logger import setup_logger
+from utils.audio_extractor import extract_audio
+from utils.whisper_api import transcribe_audio, transcribe_large_audio
+from utils.file_manager import save_transcript, save_srt_from_segments
+from utils.translator import translate_segments_to_english
+from utils.logger import setup_logger
 
 def parse_args():
     """Parse command line arguments with expanded options"""
@@ -19,9 +19,10 @@ def parse_args():
     parser.add_argument("--translate", action="store_true", help="Translate subtitles to English using GPT")
     parser.add_argument("--output-dir", default="output/transcripts", help="Directory to save output files")
     parser.add_argument("--whisper-model", default="whisper-1", help="Whisper model to use for transcription")
-    parser.add_argument("--gpt-model", default="gpt-4o", help="GPT model to use for translation")
-    parser.add_argument("--verbose", "-v", action="store_true", help="Enable verbose logging")
+    parser.add_argument("--gpt-model", default="gpt-4o-mini", help="GPT model to use for translation")
     parser.add_argument("--chunk-size", type=int, default=20, help="Chunk size in MB for large files")
+    parser.add_argument("--verbose", "-v", action="store_true", help="Enable verbose logging")
+    parser.add_argument("--bilingual", action="store_true", help="Create bilingual subtitles with original and translated text")
     return parser.parse_args()
 
 def main():
@@ -91,7 +92,7 @@ def main():
     
     # Process segments
     try:
-        # Handle different response formats (direct Whisper API vs custom dict from transcribe_large_audio)
+        # Handle different response formats
         if hasattr(text_response, "segments"):
             segments = text_response.segments
         else:
@@ -100,6 +101,18 @@ def main():
         if not segments:
             console.print("[bold red]😔 No segments found in transcription response.[/bold red]")
             return 1
+        
+        # Store original segments before translation
+        original_segments = []
+        for seg in segments:
+            if hasattr(seg, 'start') and hasattr(seg, 'end') and hasattr(seg, 'text'):
+                original_segments.append({
+                    "start": seg.start if hasattr(seg, 'start') else seg["start"],
+                    "end": seg.end if hasattr(seg, 'end') else seg["end"],
+                    "text": seg.text if hasattr(seg, 'text') else seg["text"]
+                })
+            else:
+                original_segments.append(seg.copy() if hasattr(seg, 'copy') else dict(seg))
             
         if args.translate:
             with Progress(
@@ -110,22 +123,22 @@ def main():
             ) as progress:
                 task = progress.add_task("Translating segments to English...", total=None)
                 try:
-                    segments = translate_segments_to_english(
-                        segments, 
+                    translated_segments = translate_segments_to_english(
+                        original_segments, 
                         batch_size=10, 
                         model=args.gpt_model
                     )
                     progress.update(task, completed=True)
+                    
+                    # Use translated segments for further processing
+                    segments = translated_segments
                 except Exception as e:
                     progress.update(task, completed=True)
                     console.print(f"[bold yellow]⚠️ Translation warning: {e}[/bold yellow]")
                     console.print("[bold yellow]⚠️ Continuing with original segments...[/bold yellow]")
         
         # Extract full text from segments
-        if hasattr(text_response, "text"):
-            full_text = text_response.text
-        else:
-            full_text = " ".join([s["text"] for s in segments])
+        full_text = " ".join([s["text"] for s in segments])
         
         console.print("\n[bold green]📄 Transcript Preview:[/bold green]\n")
         preview_text = full_text[:500] + ("..." if len(full_text) > 500 else "")
@@ -134,6 +147,13 @@ def main():
         # Save transcript and SRT files
         transcript_path = save_transcript(full_text, args.input, args.output_dir)
         srt_path = save_srt_from_segments(segments, args.input, args.output_dir)
+        
+        # Save bilingual SRT if requested and translation was done
+        if args.translate and args.bilingual and "original_text" in segments[0]:
+            from utils.file_manager import save_bilingual_srt
+            bilingual_path = save_bilingual_srt(segments, args.input, args.output_dir)
+            if bilingual_path:
+                console.print(f"🌐 Bilingual SRT saved to: [cyan]{bilingual_path}[/cyan]")
         
         if transcript_path and srt_path:
             console.print("\n[bold green]✅ Processing complete![/bold green]")

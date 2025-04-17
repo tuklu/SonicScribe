@@ -4,8 +4,6 @@ from dotenv import load_dotenv
 import logging
 import time
 from tenacity import retry, stop_after_attempt, wait_exponential
-from moviepy import AudioFileClip
-import math
 from pydub import AudioSegment
 
 logger = logging.getLogger("SonicScribe")
@@ -56,6 +54,7 @@ def transcribe_audio(audio_path, model="whisper-1"):
 
 def split_audio_file(audio_path, output_dir, chunk_size_mb=20):
     """Split audio file into chunks of specified size using pydub"""
+    import math
     
     os.makedirs(output_dir, exist_ok=True)
     logger.info(f"Splitting audio file: {audio_path}")

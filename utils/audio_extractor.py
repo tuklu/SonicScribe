@@ -19,7 +19,7 @@ def extract_audio(input_path, output_dir="output/transcripts"):
         if not os.path.exists(input_path):
             raise FileNotFoundError(f"Input file not found: {input_path}")
             
-        if input_path.lower().endswith((".mp4", ".mkv", ".mov", ".webm")):
+        if input_path.lower().endswith((".mp4", ".mkv", ".mov", ".webm", ".avi", ".flv")):
             clip = VideoFileClip(input_path)
             if clip.audio is None:
                 raise ValueError("No audio track found in video file")
