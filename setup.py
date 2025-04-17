@@ -1,10 +1,18 @@
 from setuptools import setup, find_packages
 
+# Ensure UTF-8 encoding when reading files
+import codecs
+import os
+
+def read_file(filename):
+    with codecs.open(os.path.join(os.path.dirname(__file__), filename), encoding="utf-8") as f:
+        return f.read()
+
 setup(
     name="sonicscribe",
     version="1.0.0",
     description="🎙️ SonicScribe - Transcribe & Translate audio/video files using Whisper and GPT models.",
-    long_description=open("README.md").read(),
+    long_description=read_file("README.md"),
     long_description_content_type="text/markdown",
     author="Jisnu Kalita",
     author_email="ssh@tuklu.dev",
