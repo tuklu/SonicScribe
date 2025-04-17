@@ -14,8 +14,8 @@ load_dotenv()
 api_key = os.getenv("OPENAI_API_KEY")
 client = OpenAI(api_key=api_key)
 
-def translate_segments_to_english(segments: List[Dict[str, Any]], batch_size=10, model="gpt-4o-mini") -> List[Dict[str, Any]]:
-    # Translate segments to English in batches, preserving the original text
+def translate_segments_to_english(segments: List[Dict[str, Any]], batch_size=10, model="gpt-4o-mini", source_language="unknown") -> List[Dict[str, Any]]:
+    # Translate segments to English in batches, preserving the original text.
     if not segments:
         logger.warning("No segments to translate")
         return []
@@ -26,6 +26,7 @@ def translate_segments_to_english(segments: List[Dict[str, Any]], batch_size=10,
         return segments
         
     logger.info(f"Starting translation of {len(segments)} segments in {math.ceil(len(segments)/batch_size)} batches")
+    logger.info(f"Source language: {source_language}")
     
     translated_segments = []
     
@@ -38,8 +39,8 @@ def translate_segments_to_english(segments: List[Dict[str, Any]], batch_size=10,
         
         # Prepare batch request with simpler format
         messages = [
-            {"role": "system", "content": "You are a translation assistant. Translate Malay to English accurately."},
-            {"role": "user", "content": "Translate each of these numbered segments from Malay to English. Return ONLY the translations, one per line, preserving the numbering:"}
+            {"role": "system", "content": f"You are a translation assistant. Translate {source_language} to English accurately."},
+            {"role": "user", "content": "Translate each of these numbered segments to English. Return ONLY the translations, one per line, preserving the numbering:"}
         ]
         
         # Add each segment as a numbered item

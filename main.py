@@ -11,12 +11,14 @@ from utils.whisper_api import transcribe_audio, transcribe_large_audio
 from utils.file_manager import save_transcript, save_srt_from_segments
 from utils.translator import translate_segments_to_english
 from utils.logger import setup_logger
+from utils.language_detector import detect_language  # Add a new utility for language detection
 
 def parse_args():
     """Parse command line arguments with expanded options"""
     parser = argparse.ArgumentParser(description="🎙️ SonicScribe - Transcribe & Translate using Whisper API")
     parser.add_argument("--input", required=True, help="Path to input audio/video file")
     parser.add_argument("--translate", action="store_true", help="Translate subtitles to English using GPT")
+    parser.add_argument("--language", default=None, help="Language of the input file (e.g., 'en', 'fr', 'es'). If not specified, it will be auto-detected.")
     parser.add_argument("--output-dir", default="output/transcripts", help="Directory to save output files")
     parser.add_argument("--whisper-model", default="whisper-1", help="Whisper model to use for transcription")
     parser.add_argument("--gpt-model", default="gpt-4o-mini", help="GPT model to use for translation")
@@ -113,7 +115,14 @@ def main():
                 })
             else:
                 original_segments.append(seg.copy() if hasattr(seg, 'copy') else dict(seg))
-            
+        
+        # Detect language if not specified
+        detected_language = args.language
+        if not detected_language:
+            console.print("[bold yellow]🌐 Detecting language of the transcription...[/bold yellow]")
+            detected_language = detect_language(" ".join([s["text"] for s in original_segments]))
+            console.print(f"[bold green]🌐 Detected language: {detected_language}[/bold green]")
+        
         if args.translate:
             with Progress(
                 SpinnerColumn(),
@@ -126,7 +135,8 @@ def main():
                     translated_segments = translate_segments_to_english(
                         original_segments, 
                         batch_size=10, 
-                        model=args.gpt_model
+                        model=args.gpt_model,
+                        source_language=detected_language
                     )
                     progress.update(task, completed=True)
                     

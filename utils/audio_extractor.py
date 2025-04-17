@@ -4,7 +4,7 @@ import logging
 
 logger = logging.getLogger("SonicScribe")
 
-def extract_audio(input_path, output_dir="output/transcripts"):
+def extract_audio(input_path, output_dir="output/extracted_audio"):
     # Extract audio from video/audio files with proper resource management
     
     base_name = os.path.splitext(os.path.basename(input_path))[0]

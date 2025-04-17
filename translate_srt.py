@@ -5,6 +5,7 @@ import re
 import argparse
 from rich.progress import Progress, TextColumn, SpinnerColumn, TimeElapsedColumn
 from rich.console import Console
+from utils.language_detector import detect_language  # Import the language detector
 
 # Load environment variables
 load_dotenv()
@@ -16,6 +17,7 @@ def parse_args():
     parser.add_argument("--output", help="Path to output SRT file (default: input_english.srt)")
     parser.add_argument("--model", default="gpt-4o-mini", help="GPT model to use for translation")
     parser.add_argument("--bilingual", action="store_true", help="Create bilingual SRT with original and translated text")
+    parser.add_argument("--language", default=None, help="Language of the input subtitles (e.g., 'en', 'fr', 'es'). If not specified, it will be auto-detected.")
     return parser.parse_args()
 
 def main():
@@ -52,6 +54,14 @@ def main():
     total_blocks = len(subtitle_blocks)
     
     console.print(f"Found [bold cyan]{total_blocks}[/bold cyan] subtitle blocks")
+    
+    # Detect language if not specified
+    detected_language = args.language
+    if not detected_language:
+        console.print("[bold yellow]🌐 Detecting language of the subtitles...[/bold yellow]")
+        all_text = " ".join([block.split("\n", 2)[-1] for block in subtitle_blocks if block.strip()])
+        detected_language = detect_language(all_text)
+        console.print(f"[bold green]🌐 Detected language: {detected_language}[/bold green]")
     
     # Process each block with progress indicator
     translated_blocks = []
@@ -94,7 +104,7 @@ def main():
                 response = client.chat.completions.create(
                     model=args.model,
                     messages=[
-                        {"role": "system", "content": "You are a translation assistant. Translate the following text to English."},
+                        {"role": "system", "content": f"You are a translation assistant. Translate {detected_language} to English."},
                         {"role": "user", "content": f"Translate this text to English: {text}"}
                     ]
                 )
