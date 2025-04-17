@@ -1,4 +1,5 @@
-openai
-moviepy
-python-dotenv
-argparse
+openai>=1.0.0
+moviepy>=1.0.3
+python-dotenv>=1.0.0
+tenacity>=8.0.0
+rich>=13.0.0
