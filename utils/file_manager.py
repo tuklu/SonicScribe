@@ -5,7 +5,7 @@ from typing import List, Dict, Any
 logger = logging.getLogger("SonicScribe")
 
 def save_transcript(text, original_file, output_dir="output/transcripts"):
-    """Save transcript to file with proper error handling"""
+    # Save transcript to file with proper error handling
     os.makedirs(output_dir, exist_ok=True)
     base = os.path.splitext(os.path.basename(original_file))[0]
     output_path = os.path.join(output_dir, f"{base}_transcribed.txt")
@@ -22,13 +22,13 @@ def save_transcript(text, original_file, output_dir="output/transcripts"):
     return None
 
 def save_srt_from_segments(segments: List[Dict[str, Any]], original_file, output_dir="output/transcripts"):
-    """Save SRT file from segments with improved formatting and error handling"""
+    # Save SRT file from segments with improved formatting and error handling
     os.makedirs(output_dir, exist_ok=True)
     base = os.path.splitext(os.path.basename(original_file))[0]
     output_path = os.path.join(output_dir, f"{base}.srt")
 
     def format_time(seconds):
-        """Format time in SRT format (HH:MM:SS,mmm)"""
+        # Format time in SRT format (HH:MM:SS,mmm)
         # Ensure we're working with a float
         seconds = float(seconds)
         
@@ -62,13 +62,13 @@ def save_srt_from_segments(segments: List[Dict[str, Any]], original_file, output
     return None
 
 def save_bilingual_srt(segments, original_file, output_dir="output/transcripts"):
-    """Save bilingual SRT file with both original and translated text"""
+    # Save bilingual SRT file with both original and translated text
     os.makedirs(output_dir, exist_ok=True)
     base = os.path.splitext(os.path.basename(original_file))[0]
     output_path = os.path.join(output_dir, f"{base}_bilingual.srt")
 
     def format_time(seconds):
-        """Format time in SRT format (HH:MM:SS,mmm)"""
+        # Format time in SRT format (HH:MM:SS,mmm)
         seconds = float(seconds)
         hrs = int(seconds // 3600)
         mins = int((seconds % 3600) // 60)

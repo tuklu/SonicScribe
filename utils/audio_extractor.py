@@ -5,7 +5,7 @@ import logging
 logger = logging.getLogger("SonicScribe")
 
 def extract_audio(input_path, output_dir="output/transcripts"):
-    """Extract audio from video/audio files with proper resource management"""
+    # Extract audio from video/audio files with proper resource management
     
     base_name = os.path.splitext(os.path.basename(input_path))[0]
     output_path = os.path.join(output_dir, f"{base_name}.wav")

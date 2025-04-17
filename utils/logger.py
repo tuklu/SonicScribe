@@ -3,7 +3,7 @@ import os
 from datetime import datetime
 
 def setup_logger(log_level=logging.INFO):
-    """Set up and configure logger"""
+    # Set up and configure logger
     
     # Create logs directory if it doesn't exist
     os.makedirs("logs", exist_ok=True)

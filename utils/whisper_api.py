@@ -15,7 +15,7 @@ client = OpenAI(api_key=api_key)
 
 @retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=2, max=10))
 def transcribe_audio(audio_path, model="whisper-1"):
-    """Transcribe audio with retry mechanism"""
+    # Transcribe audio with retry mechanism
     logger.info(f"Sending audio to Whisper API using model: {model}")
 
     # Validate input file
@@ -53,7 +53,7 @@ def transcribe_audio(audio_path, model="whisper-1"):
         raise
 
 def split_audio_file(audio_path, output_dir, chunk_size_mb=20):
-    """Split audio file into chunks of specified size using pydub"""
+    # Split audio file into chunks of specified size using pydub
     import math
     
     os.makedirs(output_dir, exist_ok=True)
@@ -93,7 +93,7 @@ def split_audio_file(audio_path, output_dir, chunk_size_mb=20):
     return chunks
 
 def transcribe_large_audio(audio_path, model="whisper-1", chunk_size_mb=20):
-    """Split and transcribe large audio files using Whisper API"""
+    # Split and transcribe large audio files using Whisper API
     logger.info(f"Audio file may be too large, splitting into chunks")
     
     # Create a directory for chunks

@@ -15,7 +15,7 @@ api_key = os.getenv("OPENAI_API_KEY")
 client = OpenAI(api_key=api_key)
 
 def translate_segments_to_english(segments: List[Dict[str, Any]], batch_size=10, model="gpt-4o-mini") -> List[Dict[str, Any]]:
-    """Translate segments to English in batches, preserving the original text"""
+    # Translate segments to English in batches, preserving the original text
     if not segments:
         logger.warning("No segments to translate")
         return []
