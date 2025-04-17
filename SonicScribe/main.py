@@ -3,6 +3,7 @@ import sys
 import logging
 import time
 import os
+import questionary
 from rich.progress import Progress, SpinnerColumn, TextColumn, TimeElapsedColumn
 from rich.console import Console
 
@@ -11,14 +12,13 @@ from utils.whisper_api import transcribe_audio, transcribe_large_audio
 from utils.file_manager import save_transcript, save_srt_from_segments
 from utils.translator import translate_segments_to_english
 from utils.logger import setup_logger
-from utils.language_detector import detect_language  # Add a new utility for language detection
+from utils.language_detector import detect_language
 
 def parse_args():
-    """Parse command line arguments with expanded options"""
+    # Parse command line arguments with expanded options
     parser = argparse.ArgumentParser(description="🎙️ SonicScribe - Transcribe & Translate using Whisper API")
     parser.add_argument("--input", required=True, help="Path to input audio/video file")
     parser.add_argument("--translate", action="store_true", help="Translate subtitles to English using GPT")
-    parser.add_argument("--language", default=None, help="Language of the input file (e.g., 'en', 'fr', 'es'). If not specified, it will be auto-detected.")
     parser.add_argument("--output-dir", default="output/transcripts", help="Directory to save output files")
     parser.add_argument("--whisper-model", default="whisper-1", help="Whisper model to use for transcription")
     parser.add_argument("--gpt-model", default="gpt-4o-mini", help="GPT model to use for translation")
@@ -26,6 +26,63 @@ def parse_args():
     parser.add_argument("--verbose", "-v", action="store_true", help="Enable verbose logging")
     parser.add_argument("--bilingual", action="store_true", help="Create bilingual subtitles with original and translated text")
     return parser.parse_args()
+
+def select_language(original_segments, console):
+    # Prompt the user to select or input a language.
+    console.print("[bold yellow]🌐 Language Selection[/bold yellow]")
+    
+    # Predefined list of languages
+    language_choices = [
+        "Auto-detect (default)",
+        "af (Afrikaans)", "am (Amharic)", "ar (Arabic)", "as (Assamese)",
+        "az (Azerbaijani)", "ba (Bashkir)", "be (Belarusian)", "bg (Bulgarian)",
+        "bn (Bengali)", "bo (Tibetan)", "br (Breton)", "bs (Bosnian)",
+        "ca (Catalan)", "cs (Czech)", "cy (Welsh)", "da (Danish)",
+        "de (German)", "el (Greek)", "en (English)", "eo (Esperanto)",
+        "es (Spanish)", "et (Estonian)", "eu (Basque)", "fa (Persian)",
+        "fi (Finnish)", "fo (Faroese)", "fr (French)", "gl (Galician)",
+        "gu (Gujarati)", "ha (Hausa)", "haw (Hawaiian)", "he (Hebrew)",
+        "hi (Hindi)", "hr (Croatian)", "ht (Haitian Creole)", "hu (Hungarian)",
+        "hy (Armenian)", "id (Indonesian)", "is (Icelandic)", "it (Italian)",
+        "ja (Japanese)", "jw (Javanese)", "ka (Georgian)", "kk (Kazakh)",
+        "km (Khmer)", "kn (Kannada)", "ko (Korean)", "la (Latin)",
+        "lb (Luxembourgish)", "ln (Lingala)", "lo (Lao)", "lt (Lithuanian)",
+        "lv (Latvian)", "mg (Malagasy)", "mi (Maori)", "mk (Macedonian)",
+        "ml (Malayalam)", "mn (Mongolian)", "mr (Marathi)", "ms (Malay)",
+        "mt (Maltese)", "my (Burmese)", "ne (Nepali)", "nl (Dutch)",
+        "no (Norwegian)", "oc (Occitan)", "pa (Punjabi)", "pl (Polish)",
+        "ps (Pashto)", "pt (Portuguese)", "ro (Romanian)", "ru (Russian)",
+        "sa (Sanskrit)", "sd (Sindhi)", "si (Sinhala)", "sk (Slovak)",
+        "sl (Slovenian)", "sn (Shona)", "so (Somali)", "sq (Albanian)",
+        "sr (Serbian)", "su (Sundanese)", "sv (Swedish)", "sw (Swahili)",
+        "ta (Tamil)", "te (Telugu)", "tg (Tajik)", "th (Thai)",
+        "tk (Turkmen)", "tl (Tagalog)", "tr (Turkish)", "tt (Tatar)",
+        "uk (Ukrainian)", "ur (Urdu)", "uz (Uzbek)", "vi (Vietnamese)",
+        "wa (Walloon)", "xh (Xhosa)", "yi (Yiddish)", "yo (Yoruba)",
+        "zh (Chinese)", "zu (Zulu)"
+    ]
+    
+    # Ask the user to select or input a language
+    selected_language = questionary.select(
+        "Select the language of the input file or type '/' to manually input:",
+        choices=language_choices + ["/ (Manually input language)"]
+    ).ask()
+    
+    # Handle manual input
+    if selected_language == "/ (Manually input language)":
+        selected_language = questionary.text(
+            "Enter the language code (e.g., 'en' for English, 'fr' for French):"
+        ).ask()
+    
+    # Handle auto-detection
+    if selected_language == "Auto-detect (default)":
+        console.print("[bold yellow]🌐 Auto-detecting language... This may cost additional API usage.[/bold yellow]")
+        detected_language = detect_language(" ".join([s["text"] for s in original_segments]))
+        console.print(f"[bold green]🌐 Detected language: {detected_language}[/bold green]")
+        return detected_language
+    
+    # Return the selected or manually entered language
+    return selected_language.split(" ")[0]  # Extract language code (e.g., 'en')
 
 def main():
     args = parse_args()
@@ -116,12 +173,8 @@ def main():
             else:
                 original_segments.append(seg.copy() if hasattr(seg, 'copy') else dict(seg))
         
-        # Detect language if not specified
-        detected_language = args.language
-        if not detected_language:
-            console.print("[bold yellow]🌐 Detecting language of the transcription...[/bold yellow]")
-            detected_language = detect_language(" ".join([s["text"] for s in original_segments]))
-            console.print(f"[bold green]🌐 Detected language: {detected_language}[/bold green]")
+        # Prompt user for language selection
+        detected_language = select_language(original_segments, console)
         
         if args.translate:
             with Progress(
