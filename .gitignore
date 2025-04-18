@@ -1,8 +1,18 @@
+# Environment files
 .env
+
+# Python cache files
 __pycache__/
 *.pyc
+
+# Output and logs
 SonicScribe/output/
 SonicScribe/logs/
+
+# Virtual environment
 SS
-sonicscribe.egg-info
-build
+
+# Build artifacts
+sonicscribe.egg-info/
+build/
+dist/
