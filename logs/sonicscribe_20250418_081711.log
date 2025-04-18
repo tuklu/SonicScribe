@@ -1,0 +1,291 @@
+2025-04-18 08:17:11,765 [INFO] Extracting audio from: C:\Users\jisnu\Downloads\Bukan Kahwin Paksa\Bukan_Kahwin_Paksa_S1E4_FINAL.mp4
+2025-04-18 08:17:33,120 [INFO] Audio saved to: C:\Users\jisnu\Downloads\Bukan Kahwin Paksa\subs\Bukan_Kahwin_Paksa_S1E4_FINAL.wav
+2025-04-18 08:17:33,155 [INFO] Audio file may be too large, splitting into chunks
+2025-04-18 08:17:33,160 [INFO] Splitting audio file: C:\Users\jisnu\Downloads\Bukan Kahwin Paksa\subs\Bukan_Kahwin_Paksa_S1E4_FINAL.wav
+2025-04-18 08:17:33,791 [INFO] Audio duration: 2520.1 seconds, splitting into ~118.886 second chunks
+2025-04-18 08:17:33,879 [INFO] Created chunk 1/22: 0.0-118.886 seconds
+2025-04-18 08:17:33,927 [INFO] Created chunk 2/22: 118.886-237.772 seconds
+2025-04-18 08:17:33,967 [INFO] Created chunk 3/22: 237.772-356.658 seconds
+2025-04-18 08:17:34,002 [INFO] Created chunk 4/22: 356.658-475.544 seconds
+2025-04-18 08:17:34,042 [INFO] Created chunk 5/22: 475.544-594.43 seconds
+2025-04-18 08:17:34,074 [INFO] Created chunk 6/22: 594.43-713.316 seconds
+2025-04-18 08:17:34,111 [INFO] Created chunk 7/22: 713.316-832.202 seconds
+2025-04-18 08:17:34,138 [INFO] Created chunk 8/22: 832.202-951.088 seconds
+2025-04-18 08:17:34,177 [INFO] Created chunk 9/22: 951.088-1069.974 seconds
+2025-04-18 08:17:34,223 [INFO] Created chunk 10/22: 1069.974-1188.86 seconds
+2025-04-18 08:17:34,258 [INFO] Created chunk 11/22: 1188.86-1307.746 seconds
+2025-04-18 08:17:34,305 [INFO] Created chunk 12/22: 1307.746-1426.632 seconds
+2025-04-18 08:17:34,356 [INFO] Created chunk 13/22: 1426.632-1545.518 seconds
+2025-04-18 08:17:34,473 [INFO] Created chunk 14/22: 1545.518-1664.404 seconds
+2025-04-18 08:17:34,525 [INFO] Created chunk 15/22: 1664.404-1783.29 seconds
+2025-04-18 08:17:34,555 [INFO] Created chunk 16/22: 1783.29-1902.176 seconds
+2025-04-18 08:17:34,597 [INFO] Created chunk 17/22: 1902.176-2021.062 seconds
+2025-04-18 08:17:34,646 [INFO] Created chunk 18/22: 2021.062-2139.948 seconds
+2025-04-18 08:17:34,670 [INFO] Created chunk 19/22: 2139.948-2258.834 seconds
+2025-04-18 08:17:34,707 [INFO] Created chunk 20/22: 2258.834-2377.72 seconds
+2025-04-18 08:17:34,750 [INFO] Created chunk 21/22: 2377.72-2496.606 seconds
+2025-04-18 08:17:34,761 [INFO] Created chunk 22/22: 2496.606-2520.1 seconds
+2025-04-18 08:17:34,831 [INFO] Split audio into 22 chunks
+2025-04-18 08:17:34,831 [INFO] Transcribing chunk 1/22
+2025-04-18 08:17:34,831 [INFO] Sending audio to Whisper API using model: whisper-1
+2025-04-18 08:17:34,856 [INFO] Starting transcription request...
+2025-04-18 08:17:50,569 [INFO] HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-04-18 08:17:50,599 [INFO] Transcription completed in 15.74 seconds
+2025-04-18 08:17:50,602 [INFO] Received 35 segments
+2025-04-18 08:17:50,637 [INFO] Transcribing chunk 2/22
+2025-04-18 08:17:50,637 [INFO] Sending audio to Whisper API using model: whisper-1
+2025-04-18 08:17:50,669 [INFO] Starting transcription request...
+2025-04-18 08:18:10,844 [INFO] HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-04-18 08:18:10,849 [INFO] Transcription completed in 20.18 seconds
+2025-04-18 08:18:10,850 [INFO] Received 40 segments
+2025-04-18 08:18:10,891 [INFO] Transcribing chunk 3/22
+2025-04-18 08:18:10,891 [INFO] Sending audio to Whisper API using model: whisper-1
+2025-04-18 08:18:10,919 [INFO] Starting transcription request...
+2025-04-18 08:18:23,833 [INFO] HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-04-18 08:18:23,835 [INFO] Transcription completed in 12.92 seconds
+2025-04-18 08:18:23,835 [INFO] Received 27 segments
+2025-04-18 08:18:23,858 [INFO] Transcribing chunk 4/22
+2025-04-18 08:18:23,859 [INFO] Sending audio to Whisper API using model: whisper-1
+2025-04-18 08:18:23,878 [INFO] Starting transcription request...
+2025-04-18 08:18:38,292 [INFO] HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-04-18 08:18:38,297 [INFO] Transcription completed in 14.42 seconds
+2025-04-18 08:18:38,298 [INFO] Received 33 segments
+2025-04-18 08:18:38,339 [INFO] Transcribing chunk 5/22
+2025-04-18 08:18:38,340 [INFO] Sending audio to Whisper API using model: whisper-1
+2025-04-18 08:18:38,369 [INFO] Starting transcription request...
+2025-04-18 08:18:52,304 [INFO] HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-04-18 08:18:52,306 [INFO] Transcription completed in 13.94 seconds
+2025-04-18 08:18:52,306 [INFO] Received 23 segments
+2025-04-18 08:18:52,335 [INFO] Transcribing chunk 6/22
+2025-04-18 08:18:52,336 [INFO] Sending audio to Whisper API using model: whisper-1
+2025-04-18 08:18:52,368 [INFO] Starting transcription request...
+2025-04-18 08:19:09,262 [INFO] HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-04-18 08:19:09,267 [INFO] Transcription completed in 16.90 seconds
+2025-04-18 08:19:09,267 [INFO] Received 30 segments
+2025-04-18 08:19:09,307 [INFO] Transcribing chunk 7/22
+2025-04-18 08:19:09,310 [INFO] Sending audio to Whisper API using model: whisper-1
+2025-04-18 08:19:09,333 [INFO] Starting transcription request...
+2025-04-18 08:19:24,812 [INFO] HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-04-18 08:19:25,049 [INFO] Transcription completed in 15.72 seconds
+2025-04-18 08:19:25,050 [INFO] Received 47 segments
+2025-04-18 08:19:25,079 [INFO] Transcribing chunk 8/22
+2025-04-18 08:19:25,080 [INFO] Sending audio to Whisper API using model: whisper-1
+2025-04-18 08:19:25,098 [INFO] Starting transcription request...
+2025-04-18 08:19:40,559 [INFO] HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-04-18 08:19:40,562 [INFO] Transcription completed in 15.46 seconds
+2025-04-18 08:19:40,563 [INFO] Received 42 segments
+2025-04-18 08:19:40,611 [INFO] Transcribing chunk 9/22
+2025-04-18 08:19:40,611 [INFO] Sending audio to Whisper API using model: whisper-1
+2025-04-18 08:19:40,626 [INFO] Starting transcription request...
+2025-04-18 08:19:56,108 [INFO] HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-04-18 08:19:56,361 [INFO] Transcription completed in 15.73 seconds
+2025-04-18 08:19:56,361 [INFO] Received 45 segments
+2025-04-18 08:19:56,384 [INFO] Transcribing chunk 10/22
+2025-04-18 08:19:56,385 [INFO] Sending audio to Whisper API using model: whisper-1
+2025-04-18 08:19:56,400 [INFO] Starting transcription request...
+2025-04-18 08:20:09,897 [INFO] HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-04-18 08:20:09,905 [INFO] Transcription completed in 13.51 seconds
+2025-04-18 08:20:09,906 [INFO] Received 30 segments
+2025-04-18 08:20:09,937 [INFO] Transcribing chunk 11/22
+2025-04-18 08:20:09,939 [INFO] Sending audio to Whisper API using model: whisper-1
+2025-04-18 08:20:09,958 [INFO] Starting transcription request...
+2025-04-18 08:20:25,912 [INFO] HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-04-18 08:20:25,914 [INFO] Transcription completed in 15.96 seconds
+2025-04-18 08:20:25,914 [INFO] Received 38 segments
+2025-04-18 08:20:25,955 [INFO] Transcribing chunk 12/22
+2025-04-18 08:20:25,955 [INFO] Sending audio to Whisper API using model: whisper-1
+2025-04-18 08:20:25,979 [INFO] Starting transcription request...
+2025-04-18 08:20:38,428 [INFO] HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-04-18 08:20:38,429 [INFO] Transcription completed in 12.45 seconds
+2025-04-18 08:20:38,430 [INFO] Received 26 segments
+2025-04-18 08:20:38,457 [INFO] Transcribing chunk 13/22
+2025-04-18 08:20:38,457 [INFO] Sending audio to Whisper API using model: whisper-1
+2025-04-18 08:20:38,476 [INFO] Starting transcription request...
+2025-04-18 08:20:54,057 [INFO] HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-04-18 08:20:54,059 [INFO] Transcription completed in 15.58 seconds
+2025-04-18 08:20:54,060 [INFO] Received 34 segments
+2025-04-18 08:20:54,077 [INFO] Transcribing chunk 14/22
+2025-04-18 08:20:54,078 [INFO] Sending audio to Whisper API using model: whisper-1
+2025-04-18 08:20:54,091 [INFO] Starting transcription request...
+2025-04-18 08:21:10,698 [INFO] HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-04-18 08:21:10,701 [INFO] Transcription completed in 16.61 seconds
+2025-04-18 08:21:10,701 [INFO] Received 21 segments
+2025-04-18 08:21:10,724 [INFO] Transcribing chunk 15/22
+2025-04-18 08:21:10,724 [INFO] Sending audio to Whisper API using model: whisper-1
+2025-04-18 08:21:10,740 [INFO] Starting transcription request...
+2025-04-18 08:21:24,940 [INFO] HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-04-18 08:21:24,942 [INFO] Transcription completed in 14.20 seconds
+2025-04-18 08:21:24,942 [INFO] Received 40 segments
+2025-04-18 08:21:24,956 [INFO] Transcribing chunk 16/22
+2025-04-18 08:21:24,956 [INFO] Sending audio to Whisper API using model: whisper-1
+2025-04-18 08:21:24,970 [INFO] Starting transcription request...
+2025-04-18 08:21:38,551 [INFO] HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-04-18 08:21:38,553 [INFO] Transcription completed in 13.58 seconds
+2025-04-18 08:21:38,553 [INFO] Received 19 segments
+2025-04-18 08:21:38,573 [INFO] Transcribing chunk 17/22
+2025-04-18 08:21:38,574 [INFO] Sending audio to Whisper API using model: whisper-1
+2025-04-18 08:21:38,587 [INFO] Starting transcription request...
+2025-04-18 08:21:59,658 [INFO] HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-04-18 08:21:59,660 [INFO] Transcription completed in 21.07 seconds
+2025-04-18 08:21:59,661 [INFO] Received 21 segments
+2025-04-18 08:21:59,674 [INFO] Transcribing chunk 18/22
+2025-04-18 08:21:59,675 [INFO] Sending audio to Whisper API using model: whisper-1
+2025-04-18 08:21:59,683 [INFO] Starting transcription request...
+2025-04-18 08:22:15,340 [INFO] HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-04-18 08:22:15,343 [INFO] Transcription completed in 15.66 seconds
+2025-04-18 08:22:15,343 [INFO] Received 32 segments
+2025-04-18 08:22:15,365 [INFO] Transcribing chunk 19/22
+2025-04-18 08:22:15,365 [INFO] Sending audio to Whisper API using model: whisper-1
+2025-04-18 08:22:15,390 [INFO] Starting transcription request...
+2025-04-18 08:22:27,824 [INFO] HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-04-18 08:22:27,827 [INFO] Transcription completed in 12.44 seconds
+2025-04-18 08:22:27,828 [INFO] Received 14 segments
+2025-04-18 08:22:27,851 [INFO] Transcribing chunk 20/22
+2025-04-18 08:22:27,851 [INFO] Sending audio to Whisper API using model: whisper-1
+2025-04-18 08:22:27,864 [INFO] Starting transcription request...
+2025-04-18 08:22:39,299 [INFO] HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-04-18 08:22:39,300 [INFO] Transcription completed in 11.44 seconds
+2025-04-18 08:22:39,300 [INFO] Received 13 segments
+2025-04-18 08:22:39,325 [INFO] Transcribing chunk 21/22
+2025-04-18 08:22:39,325 [INFO] Sending audio to Whisper API using model: whisper-1
+2025-04-18 08:22:39,346 [INFO] Starting transcription request...
+2025-04-18 08:22:49,906 [INFO] HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-04-18 08:22:49,908 [INFO] Transcription completed in 10.56 seconds
+2025-04-18 08:22:49,909 [INFO] Received 13 segments
+2025-04-18 08:22:49,924 [INFO] Transcribing chunk 22/22
+2025-04-18 08:22:49,924 [INFO] Sending audio to Whisper API using model: whisper-1
+2025-04-18 08:22:49,938 [INFO] Starting transcription request...
+2025-04-18 08:22:54,056 [INFO] HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-04-18 08:22:54,057 [INFO] Transcription completed in 4.12 seconds
+2025-04-18 08:22:54,057 [INFO] Received 7 segments
+2025-04-18 08:23:55,019 [INFO] Starting translation of 630 segments in 63 batches
+2025-04-18 08:23:55,019 [INFO] Source language: ms
+2025-04-18 08:23:55,019 [INFO] Translating batch 1/63 (10 segments)...
+2025-04-18 08:23:57,638 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:23:58,644 [INFO] Translating batch 2/63 (10 segments)...
+2025-04-18 08:24:00,641 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:24:01,643 [INFO] Translating batch 3/63 (10 segments)...
+2025-04-18 08:24:03,169 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:24:04,171 [INFO] Translating batch 4/63 (10 segments)...
+2025-04-18 08:24:06,697 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:24:07,701 [INFO] Translating batch 5/63 (10 segments)...
+2025-04-18 08:24:09,637 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:24:10,641 [INFO] Translating batch 6/63 (10 segments)...
+2025-04-18 08:24:12,502 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:24:13,510 [INFO] Translating batch 7/63 (10 segments)...
+2025-04-18 08:24:17,588 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:24:18,590 [INFO] Translating batch 8/63 (10 segments)...
+2025-04-18 08:24:21,740 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:24:22,742 [INFO] Translating batch 9/63 (10 segments)...
+2025-04-18 08:24:24,714 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:24:25,717 [INFO] Translating batch 10/63 (10 segments)...
+2025-04-18 08:24:28,147 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:24:29,150 [INFO] Translating batch 11/63 (10 segments)...
+2025-04-18 08:24:30,986 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:24:31,988 [INFO] Translating batch 12/63 (10 segments)...
+2025-04-18 08:24:33,690 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:24:34,691 [INFO] Translating batch 13/63 (10 segments)...
+2025-04-18 08:24:36,452 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:24:37,454 [INFO] Translating batch 14/63 (10 segments)...
+2025-04-18 08:24:39,843 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:24:40,848 [INFO] Translating batch 15/63 (10 segments)...
+2025-04-18 08:24:43,207 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:24:44,213 [INFO] Translating batch 16/63 (10 segments)...
+2025-04-18 08:24:46,058 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:24:47,073 [INFO] Translating batch 17/63 (10 segments)...
+2025-04-18 08:24:49,112 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:24:50,115 [INFO] Translating batch 18/63 (10 segments)...
+2025-04-18 08:24:52,459 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:24:53,463 [INFO] Translating batch 19/63 (10 segments)...
+2025-04-18 08:24:55,819 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:24:56,824 [INFO] Translating batch 20/63 (10 segments)...
+2025-04-18 08:24:58,455 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:24:59,456 [INFO] Translating batch 21/63 (10 segments)...
+2025-04-18 08:25:01,431 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:25:02,435 [INFO] Translating batch 22/63 (10 segments)...
+2025-04-18 08:25:04,578 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:25:05,584 [INFO] Translating batch 23/63 (10 segments)...
+2025-04-18 08:25:08,136 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:25:09,138 [INFO] Translating batch 24/63 (10 segments)...
+2025-04-18 08:25:11,576 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:25:12,582 [INFO] Translating batch 25/63 (10 segments)...
+2025-04-18 08:25:14,860 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:25:15,863 [INFO] Translating batch 26/63 (10 segments)...
+2025-04-18 08:25:18,347 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:25:19,349 [INFO] Translating batch 27/63 (10 segments)...
+2025-04-18 08:25:21,947 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:25:22,949 [INFO] Translating batch 28/63 (10 segments)...
+2025-04-18 08:25:25,419 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:25:26,422 [INFO] Translating batch 29/63 (10 segments)...
+2025-04-18 08:25:28,619 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:25:29,621 [INFO] Translating batch 30/63 (10 segments)...
+2025-04-18 08:25:31,731 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:25:32,733 [INFO] Translating batch 31/63 (10 segments)...
+2025-04-18 08:25:35,008 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:25:36,016 [INFO] Translating batch 32/63 (10 segments)...
+2025-04-18 08:25:37,763 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:25:38,766 [INFO] Translating batch 33/63 (10 segments)...
+2025-04-18 08:25:41,403 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:25:42,405 [INFO] Translating batch 34/63 (10 segments)...
+2025-04-18 08:25:44,418 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:25:45,421 [INFO] Translating batch 35/63 (10 segments)...
+2025-04-18 08:25:47,179 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:25:48,182 [INFO] Translating batch 36/63 (10 segments)...
+2025-04-18 08:25:50,065 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:25:51,067 [INFO] Translating batch 37/63 (10 segments)...
+2025-04-18 08:25:53,007 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:25:54,010 [INFO] Translating batch 38/63 (10 segments)...
+2025-04-18 08:25:57,529 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:25:58,531 [INFO] Translating batch 39/63 (10 segments)...
+2025-04-18 08:26:00,465 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:26:01,467 [INFO] Translating batch 40/63 (10 segments)...
+2025-04-18 08:26:03,818 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:26:04,820 [INFO] Translating batch 41/63 (10 segments)...
+2025-04-18 08:26:07,338 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:26:08,341 [INFO] Translating batch 42/63 (10 segments)...
+2025-04-18 08:26:10,538 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:26:11,542 [INFO] Translating batch 43/63 (10 segments)...
+2025-04-18 08:26:14,376 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:26:15,379 [INFO] Translating batch 44/63 (10 segments)...
+2025-04-18 08:26:17,895 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:26:18,899 [INFO] Translating batch 45/63 (10 segments)...
+2025-04-18 08:26:21,134 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:26:22,136 [INFO] Translating batch 46/63 (10 segments)...
+2025-04-18 08:26:25,323 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:26:26,325 [INFO] Translating batch 47/63 (10 segments)...
+2025-04-18 08:26:29,415 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:26:30,418 [INFO] Translating batch 48/63 (10 segments)...
+2025-04-18 08:26:32,618 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:26:33,620 [INFO] Translating batch 49/63 (10 segments)...
+2025-04-18 08:26:35,524 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:26:36,526 [INFO] Translating batch 50/63 (10 segments)...
+2025-04-18 08:26:38,318 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:26:39,321 [INFO] Translating batch 51/63 (10 segments)...
+2025-04-18 08:26:42,295 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:26:43,298 [INFO] Translating batch 52/63 (10 segments)...
+2025-04-18 08:26:44,990 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:26:45,993 [INFO] Translating batch 53/63 (10 segments)...
+2025-04-18 08:26:47,719 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:26:48,721 [INFO] Translating batch 54/63 (10 segments)...
+2025-04-18 08:26:50,860 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:26:51,863 [INFO] Translating batch 55/63 (10 segments)...
+2025-04-18 08:26:53,145 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:26:54,149 [INFO] Translating batch 56/63 (10 segments)...
+2025-04-18 08:26:55,895 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:26:56,897 [INFO] Translating batch 57/63 (10 segments)...
+2025-04-18 08:27:02,251 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:27:03,254 [INFO] Translating batch 58/63 (10 segments)...
+2025-04-18 08:27:05,093 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:27:06,096 [INFO] Translating batch 59/63 (10 segments)...
+2025-04-18 08:27:07,685 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:27:08,688 [INFO] Translating batch 60/63 (10 segments)...
+2025-04-18 08:27:10,327 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:27:11,368 [INFO] Translating batch 61/63 (10 segments)...
+2025-04-18 08:27:13,485 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:27:14,488 [INFO] Translating batch 62/63 (10 segments)...
+2025-04-18 08:27:16,374 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:27:17,387 [INFO] Translating batch 63/63 (10 segments)...
+2025-04-18 08:27:19,429 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-18 08:27:20,433 [INFO] Translation completed: 630 segments processed
+2025-04-18 08:27:20,441 [INFO] Transcript saved at: C:\Users\jisnu\Downloads\Bukan Kahwin Paksa\subs\Bukan_Kahwin_Paksa_S1E4_FINAL_transcribed.txt
+2025-04-18 08:27:20,445 [INFO] Subtitles (with timestamps) saved at: C:\Users\jisnu\Downloads\Bukan Kahwin Paksa\subs\Bukan_Kahwin_Paksa_S1E4_FINAL.srt

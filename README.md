@@ -23,33 +23,37 @@ A powerful CLI tool and Python module for transcribing and translating audio/vid
 - Python 3.8 or higher
 - OpenAI API key
 
-### Setup
+### Install SonicScribe
 
-1. Clone the repository:
+Install SonicScribe directly from PyPI:
+
+```bash
+pip install sonicscribe
+```
+
+### Setup OpenAI API Key
+
+SonicScribe requires an OpenAI API key to function. You can set the API key as an environment variable to avoid hardcoding it or using a `.env` file.
+
+1. **Set the API Key as an Environment Variable**:
+   - On **Windows**
+   ```powershell
+   setx OPENAI_API_KEY "YourKeyGoesHere" /M
+   ```
+   - On **macOS/Linux:**
+   ```bash   
+   export OPENAI_API_KEY=YourKeyGoesHere
+   ```
+
+2. **Verify the Environment Variable**: Run the following command to ensure the API key is set correctly
+   - On **Windows**
+   ```powershell
+   echo %OPENAI_API_KEY%
+   ```
+   - On **macOS/Linux:**
    ```bash
-   git clone https://github.com/tuklu/SonicScribe.git
-   cd SonicScribe/SonicScribe
+   echo $OPENAI_API_KEY
    ```
-
-2. Create a virtual environment and activate it:
-   ```bash
-   python -m venv venv
-   # On Windows
-   venv\Scripts\activate
-   # On macOS/Linux
-   source venv/bin/activate
-   ```
-
-3. Install the required packages:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. Create a `.env` file in the root directory with your OpenAI API key:
-   ```properties
-   OPENAI_API_KEY=your_api_key_here
-   ```
-
 ---
 
 ## Usage
@@ -59,7 +63,7 @@ A powerful CLI tool and Python module for transcribing and translating audio/vid
 The main script provides full functionality for processing audio/video files:
 
 ```bash
-python main.py --input "path/to/your/video.mp4" --translate --output-dir "output/folder"
+sonicscribe --input "path/to/your/video.mp4" --translate --output-dir "output/folder"
 ```
 
 #### Options
@@ -90,7 +94,7 @@ When processing files, SonicScribe provides an interactive language selection fe
 If you already have an SRT file and just want to translate it:
 
 ```bash
-python translate_srt.py --input "path/to/your/subtitles.srt" --bilingual
+translate_srt --input "path/to/your/subtitles.srt" --bilingual
 ```
 
 #### Options
@@ -108,7 +112,7 @@ python translate_srt.py --input "path/to/your/subtitles.srt" --bilingual
 ### Basic Transcription
 
 ```bash
-python main.py --input "lecture.mp4"
+sonicscribe --input "lecture.mp4"
 ```
 
 This will:
@@ -119,7 +123,7 @@ This will:
 ### Transcription with Translation
 
 ```bash
-python main.py --input "foreign_movie.mp4" --translate --gpt-model "gpt-4o"
+sonicscribe --input "foreign_movie.mp4" --translate --gpt-model "gpt-4o"
 ```
 
 This will:
@@ -131,7 +135,7 @@ This will:
 ### Bilingual Subtitles
 
 ```bash
-python main.py --input "interview.mp3" --translate --bilingual
+sonicscribe --input "interview.mp3" --translate --bilingual
 ```
 
 This will:
@@ -143,7 +147,7 @@ This will:
 ### Translating Existing Subtitles
 
 ```bash
-python translate_srt.py --input "movie.srt" --bilingual --model "gpt-4o-mini"
+translate-srt --input "movie.srt" --bilingual --model "gpt-4o-mini"
 ```
 
 This will:
@@ -153,7 +157,7 @@ This will:
 
 ---
 
-## Output Files
+### Output Files
 
 SonicScribe generates several types of output files:
 
@@ -216,10 +220,30 @@ SonicScribe logs all operations to the `logs` directory. If you encounter issues
 
 ## License
 
-[Your license information here]
+MIT License
+
+Copyright (c) 2025 [tuklu]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 ---
 
 ## Support
 
-For issues, questions, or contributions, please [create an issue](https://github.com/yourusername/sonicscribe/issues) on the GitHub repository.
+For issues, questions, or contributions, please [create an issue](https://github.com/tukllu/sonicscribe/issues) on the GitHub repository.
