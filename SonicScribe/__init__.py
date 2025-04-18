@@ -22,7 +22,7 @@ Example Usage:
     from sonicscribe.utils.translator import translate_segments_to_english
 """
 
-__version__ = "1.0.1"
+__version__ = "1.0.3"
 __author__ = "Jisnu Kalita"
 __email__ = "ssh@tuklu.dev"
 

@@ -10,7 +10,7 @@ def read_file(filename):
 
 setup(
     name="sonicscribe",
-    version="1.0.1",
+    version="1.0.3",
     description="🎙️ SonicScribe - Transcribe & Translate audio/video files using Whisper and GPT models.",
     long_description=read_file("README.md"),
     long_description_content_type="text/markdown",
